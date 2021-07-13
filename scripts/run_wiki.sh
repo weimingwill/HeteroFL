@@ -14,6 +14,6 @@ fi
 
 srun -u --partition=innova --job-name=${fraction}-wiki-heterofl \
     -n1 --gres=gpu:1 --ntasks-per-node=1 \
-    python ${project_dir}/src/test_transformer_fed.py \
+    python ${project_dir}/src/train_transformer_fed.py \
       --data_name WikiText2 --model_name transformer \
       --control_name 1_100_${fraction}_iid_fix_a2-b2-c2-d2-e2_none_1_0 2>&1 | tee log/wiki_${fraction}-${now}.log &
