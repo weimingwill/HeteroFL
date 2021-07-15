@@ -23,4 +23,5 @@ srun -u --partition=innova --job-name=${fraction}-${fix}-mnist-heterofl \
     -n1 --gres=gpu:1 --ntasks-per-node=1 \
     python ${project_dir}/src/train_classifier_fed.py \
       --data_name MNIST --model_name conv \
-      --control_name 1_100_${fraction}_non-iid-fix_${fix}_bn_1_1 2>&1 | tee log/users_mnist_${fraction}-${now}.log &
+      --control_name 1_100_${fraction}_iid_fix_${fix}_bn_1_1 2>&1 | tee log/users_mnist_${fraction}-${now}.log &
+
